@@ -104,8 +104,8 @@ data:
 
     CACHES = {
         'default': {
-            'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-            'LOCATION': '{}:{}'.format("{{ include "awx.fullname" . }}-memcached", "{{ default "11211" .Values.memcached_port }}")
+            'BACKEND': 'django_redis.cache.RedisCache',
+              'LOCATION': '{}:{}'.format("{{ include "awx.fullname" . }}-redis", "{{ default "6379" .Values.redis_port }}")
         },
         'ephemeral': {
             'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',

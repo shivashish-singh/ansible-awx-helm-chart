@@ -32,6 +32,7 @@ email_port: 25
 email_host_user: ''
 email_host_password: ''
 email_use_tls: 'False'
+redis_port: 6379
 
 deployment:
   annotations: {}
@@ -84,7 +85,7 @@ metrics:
 
 
 # Chart values https://github.com/helm/charts/blob/master/stable/memcached/values.yaml
-memcached:
+redis:
   install: true
 
 # Chart values https://github.com/helm/charts/blob/master/stable/rabbitmq/values.yaml
